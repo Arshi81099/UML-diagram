@@ -102,5 +102,9 @@ if __name__ == "__main__":
     print(f"Course: {python_course.course_name}, Enrolled Students: {[e.user_id for e in python_course.enrollments]}")
     print(f"Instructor Courses: {[ic.course_id for ic in instructor.instructor_courses]}")
     print(f"Student Requests: {[r.course_id for r in student.requests]}")
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+<img width="881" alt="Screenshot 2024-07-12 at 12 58 45 PM" src="https://github.com/user-attachments/assets/5eebeeec-aced-42ca-ac2f-7bfb1034e1cf">
+
+
+
