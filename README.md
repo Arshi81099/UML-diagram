@@ -5,6 +5,8 @@ Overview
 This project implements a Course Management System where users can enroll in courses, request instructor roles, and have courses assigned to them. It includes classes for users, courses, topics, enrollments, instructor requests, and instructor courses.
 
 Classes and Relationships
+
+
 User
 Represents a user of the system.
 Attributes:
@@ -14,6 +16,8 @@ user_type: Type of user (e.g., "Student", "Instructor").
 enrollments: List of courses the user is enrolled in.
 instructor_courses: List of courses assigned to the user as an instructor.
 requests: List of requests made by the user (e.g., to become an instructor).
+
+
 Course
 Represents a course offered in the system.
 Attributes:
@@ -23,6 +27,8 @@ about: Description of the course.
 topics: List of topics covered in the course.
 enrollments: List of enrollments (users enrolled in the course).
 instructor_courses: List of instructors assigned to teach the course.
+
+
 Topic
 Represents a topic within a course.
 Attributes:
@@ -30,12 +36,16 @@ topic_id: Unique identifier for the topic.
 lecture: Description of the lecture for the topic.
 quizzes: Details about quizzes related to the topic.
 programming_quiz: Details about programming quizzes related to the topic.
+
+
 CourseEnrollment
 Represents the enrollment of a user in a course.
 Attributes:
 course_enrollment_id: Unique identifier for the enrollment.
 user_id: Identifier of the user enrolled.
 course_id: Identifier of the course enrolled.
+
+
 InstructorRequest
 Represents a request from a user to become an instructor for a course.
 Attributes:
@@ -43,6 +53,8 @@ request_id: Unique identifier for the request.
 user_id: Identifier of the user making the request.
 course_id: Identifier of the course for which the request is made.
 status: Current status of the request (e.g., "Pending", "Approved", "Rejected").
+
+
 InstructorCourse
 Represents the assignment of an instructor to teach a course.
 Attributes:
@@ -52,7 +64,6 @@ Class Diagram
 The class diagram below illustrates the relationships between these classes:
 
 ## plantuml
-
 [Insert your PlantUML code here]
 
 Usage
@@ -61,9 +72,6 @@ Modify the classes and methods as per your project requirements.
 Use the provided example usage or integrate these classes into your application.
 Example Usage
 Here's a brief example of how to use these classes:
-
-python
-Copy code
 # Example usage (Python code)
 if __name__ == "__main__":
     # Creating Users
