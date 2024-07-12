@@ -1,0 +1,73 @@
+@startuml
+
+class User {
+  int user_id
+  str password
+  str user_type
+  list<CourseEnrollment> enrollments
+  list<InstructorCourse> instructor_courses
+  list<InstructorRequest> requests
+  __init__(int user_id, str password, str user_type)
+  enroll_course(Course course)
+  request_instructor(Course course)
+  assign_course(Course course)
+}
+
+class Course {
+  int course_id
+  str course_name
+  str about
+  list<Topic> topics
+  list<CourseEnrollment> enrollments
+  list<InstructorCourse> instructor_courses
+  __init__(int course_id, str course_name, str about)
+  add_topic(Topic topic)
+}
+
+class Topic {
+  int topic_id
+  str lecture
+  str quizzes
+  str programming_quiz
+  __init__(int topic_id, str lecture, str quizzes, str programming_quiz)
+}
+
+class CourseEnrollment {
+  int course_enrollment_id
+  int user_id
+  int course_id
+  __init__(int course_enrollment_id, int user_id, int course_id)
+}
+
+class InstructorRequest {
+  int request_id
+  int user_id
+  int course_id
+  str status
+  __init__(int request_id, int user_id, int course_id, str status)
+}
+
+class InstructorCourse {
+  int user_id
+  int course_id
+  __init__(int user_id, int course_id)
+}
+
+User "1" -- "0..*" CourseEnrollment : enrollments
+User "1" -- "0..*" InstructorRequest : requests
+User "1" -- "0..*" InstructorCourse : instructor_courses
+
+Course "1" -- "0..*" Topic : topics
+Course "1" -- "0..*" CourseEnrollment : enrollments
+Course "1" -- "0..*" InstructorCourse : instructor_courses
+
+CourseEnrollment "0..*" -- "1" User : user_id
+CourseEnrollment "0..*" -- "1" Course : course_id
+
+InstructorRequest "0..*" -- "1" User : user_id
+InstructorRequest "0..*" -- "1" Course : course_id
+
+InstructorCourse "0..*" -- "1" User : user_id
+InstructorCourse "0..*" -- "1" Course : course_id
+
+@enduml
